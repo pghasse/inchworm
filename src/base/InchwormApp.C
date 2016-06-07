@@ -4,6 +4,8 @@
 #include "ModulesApp.h"
 #include "MooseSyntax.h"
 
+#include "LaplaceYoung.h"
+
 template<>
 InputParameters validParams<InchwormApp>()
 {
@@ -45,6 +47,7 @@ extern "C" void InchwormApp__registerObjects(Factory & factory) { InchwormApp::r
 void
 InchwormApp::registerObjects(Factory & factory)
 {
+  registerKernel(LaplaceYoung);
 }
 
 // External entry point for dynamic syntax association
